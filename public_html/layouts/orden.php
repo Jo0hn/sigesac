@@ -1,5 +1,6 @@
 <?if(isset($_SESSION['user']))
 		{
+
 				$Req = new catRequests();
 				$Deta = new catDetails();
 				$reqPro = new ctrRequestsProviders();
@@ -19,37 +20,56 @@
 
 					if(isset($_POST['crearOrden']))
 					{
-						$orden->idRequest = $_GET['ordenDetail'];
-						$orden->ctrOrderAdd();
 
-						$records = $orden->ctrOrderShow('algo');
-						$cont = 0;
-						$idOrder = 0;
-						while($info = $records->fetch_object())
+
+						for($j = 0; $j < $_POST['quantDetails']; $j++)
 						{
-							$cont++;
-							if($cont == 1)
+							if($_POST['checkbox'. $j] != '')
 							{
-								$idOrd = $info->idOrder;
+								$acep = 1;
 							}
 						}
 						
-						
-						for($i = 0; $i < $_POST['quantDetails']; $i++)
+						if($acep == 1)
 						{
+							$orden->idRequest = $_GET['ordenDetail'];
+							$orden->ctrOrderAdd();
 
-							$Deta->idDetail = $_POST['checkbox'. $i];
-							$Deta->idOrder=$idOrd;
-							$Deta->catDetailsUpdate('orden');
+							$records = $orden->ctrOrderShow('algo');
+							$cont = 0;
+							$idOrder = 0;
+							while($info = $records->fetch_object())
+							{
+								$cont++;
+								if($cont == 1)
+								{
+									$idOrd = $info->idOrder;
+								}
+							}
+							if($_POST[''])
+
+
+								for($i = 0; $i < $_POST['quantDetails']; $i++)
+								{
+									
+
+									$Deta->idDetail = $_POST['checkbox'. $i];
+									$Deta->idOrder=$idOrd;
+									$Deta->catDetailsUpdate('orden');
+								}
+								echo $idOrd."<br>";
+								$reqPro->idRequest = $_GET['ordenDetail'];
+								$reqPro->idProvider = $_POST['idProvider'];
+								$reqPro->idOrder = $idOrd;
+								$reqPro->ctrRequestProviderAdd();
+
+								echo "<script type='text/javascript'>alert('Orden agregada con exito')</script>";
+								echo '<script>document.location.href="./?orden";</script>';
 						}
-						echo $idOrd."<br>";
-						$reqPro->idRequest = $_GET['ordenDetail'];
-						$reqPro->idProvider = $_POST['idProvider'];
-						$reqPro->idOrder = $idOrd;
-						$reqPro->ctrRequestProviderAdd();
-
-						echo "<script type='text/javascript'>alert('Orden agregada con exito')</script>";
-						//echo '<script>document.location.href="./?orden=";</script>';
+						else
+						{
+							echo "<script type='text/javascript'>alert('No se a seleccionado ningun dato')</script>";
+						}
 					
 					}
 					?>

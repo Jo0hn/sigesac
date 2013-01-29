@@ -67,6 +67,7 @@
 									 else
 							{
 								echo "<script type='text/javascript'>alert('Debe Firmar el Jefe del Departamento')</script>";
+								echo '<script>document.location.href="./?predet='.$_GET['predet'].'";</script>'; 
 							}
 					 }
 
@@ -79,7 +80,7 @@
 						<div id="informacion">
 							<form method="post">
 								<h2 class='title'>FONDO DE PROTECCI&Oacute;N DE LISIADOS Y DISCAPACITADOS <br/> A CONSECUENCIAS DEL CONFLICTO ARMADO </h2>
-								<h2 class='detalle'>2ª y 4ª.avenida norte, sobre alameda juan pablo segundo No.428, Apdo. Postal Nº 05-204 Tel. 2222-0100, Telefax: 2281-1870; Correo Electronico: fondolisiados@fondolisiados.gob.sv; www.fondolisiados.gob.sv</h2>
+								<h2 class='detalle'>Oficinas FOPROLYD: Entre 2a y 4a Avenida Norte y Alameda Juan Pablo II # 428, San Salvador. <br/> Tel. 2133-6200. <br/> Correo Electr&oacute;nico: uaci7@fondolisiados.gob.sv</h2>
 								<h2 class='title'>Certificado Disponibilidad Presupuestaria No.<? echo $datos->idCertificate;?></h2><br/>
 								<table id='money'>
 									<tr>
@@ -159,7 +160,7 @@
 												<input type='text' class='box' name='user5' /><br/><br/>
 												<label for="pass5">Contraseña</label>&nbsp;
 												<input type='password' class='box' name='pass5' /><br/><br/>
-												<center><input type="submit" name="firma5" value="firmar"></center> <br/>
+												<center><input type="submit" name="firma5" value="Firmar"></center> <br/>
 												</form>
 									<?
 										}
@@ -188,7 +189,7 @@
 											<input type='text' class='box' name='user6' /><br/><br/>
 											<label for="pass6">Contraseña</label>&nbsp;
 											<input type='password' class='box' name='pass6' /><br/><br/>
-											<center><input type="submit" name="firma6" value="firmar"></center> <br/>
+											<center><input type="submit" name="firma6" value="Firmar"></center> <br/>
 										</form>
 									<?
 										}
@@ -199,6 +200,43 @@
 									</tr>
 									</table>
 									</center>
+									<br/>
+									<br/>
+									<?
+
+									$auto->idRequest =  $_GET['predet'];
+									$auto->status = 1;
+									$resu1 =  $auto->catAuthorizationSearch();
+
+									$auto->idRequest =  $_GET['predet'];
+									$auto->status = 2;
+									$resu2 =  $auto->catAuthorizationSearch();
+
+									$auto->idRequest =   $_GET['predet'];
+									$auto->status = 3;
+									$resu3 =  $auto->catAuthorizationSearch();
+
+									$auto->idRequest =   $_GET['predet'];
+									$auto->status = 4;
+									$resu4 =  $auto->catAuthorizationSearch();
+
+									$auto->idRequest =   $_GET['predet'];
+									$auto->status = 5;
+									$resu5 =  $auto->catAuthorizationSearch();
+
+									$auto->idRequest =   $_GET['predet'];
+									$auto->status = 6;
+									$resu6 =  $auto->catAuthorizationSearch();
+
+									if($resu1->status == 1 && $resu2->status == 2 && $resu3->status == 3 &&  $resu4->status == 4 &&  $resu5->status == 5 &&  $resu6->status == 6 )
+									{
+										?>
+									<center><a id="ocult" onClick="window.print();" href="#"><img width="80" height="70" src="./img/imp.png"/><a/></center>
+									<center><p id="ocult">Imprimir</p></center>
+									<?
+
+									}
+									?>
 									<br/>
 									<br/>
 									<? 

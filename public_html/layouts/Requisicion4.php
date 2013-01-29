@@ -34,8 +34,9 @@
 <article>
 	<div id="informacion">
 		<h2 class='title'>FONDO DE PROTECCI&Oacute;N DE LISIADOS Y DISCAPACITADOS <br/> A CONSECUENCIAS DEL CONFLICTO ARMADO </h2>
-		<h2 class='detalle'>6ª. 10ª. C.Pte. y 29 Av. Sur No. 1537, Col. Flor Blanca. Apdo. Postal No. 05-204. <br/> PBX: 222-0100, Fax: 281-1870. <br/> Correo Electr&oacute;nico: fondolisiados@telesal.net</h2>
+		<h2 class='detalle'>Oficinas FOPROLYD: Entre 2a y 4a Avenida Norte y Alameda Juan Pablo II # 428, San Salvador.<br/> Tel. 2133-6200. <br/> Correo Electr&oacute;nico: uaci7@fondolisiados.gob.sv</h2>
 		<h2 class='title'>Orden y Suministros de Obras Bienes y Servicios</h2>
+		<center>
 			<table border="1" width="740px">
 				<tr>
 					<td align="center"><strong>Fecha</strong><br/>
@@ -133,9 +134,9 @@
 					<br/>
 					<br/>
 					<input type="submit" name="addend" />
+				</center>	
 				</form>
-					<center><a href="#"><img width="80" height="70" src="./img/imp.png"/><a/></center>
-					<center>Imprimir</center>
+					
 
 					<br/>
 					<br/>

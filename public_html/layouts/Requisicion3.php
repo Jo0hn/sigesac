@@ -21,10 +21,10 @@
 
 							$Req->catRequestsUpdate('cifra');
 
-							$reqPro->idRequest = $_GET['coti'];
-							$reqPro->idProvider = $_POST['idProvider'];
+							// $reqPro->idRequest = $_GET['coti'];
+							// $reqPro->idProvider = $_POST['idProvider'];
 
-							$reqPro->ctrRequestProviderAdd();
+							// $reqPro->ctrRequestProviderAdd();
 
 							echo'<script>document.location.href="./?req='.$_GET['coti'].'";</script>';
 						}
@@ -68,11 +68,12 @@
 						<div id="informacion">
 									
 									<h2 class='title'>FONDO DE PROTECCI&Oacute;N DE LISIADOS Y DISCAPACITADOS <br/> A CONSECUENCIAS DEL CONFLICTO ARMADO </h2>
-									<h2 class='detalle'>Alameda Juan Pablo II y 4ª. Av. Norte # 428, Barrio San Jos&eacute;, Centro Hist&oacute;rico de San Salvador, El Salvador, C.A.<br/> PBX: 2222-0100, Fax: 2221-1567. Correo Electr&oacute;nico: uaci@fondolisiados.gob.sv</h2>
+									<h2 class='detalle'>Oficinas FOPROLYD: Entre 2a y 4a Avenida Norte y Alameda Juan Pablo II # 428, San Salvador.<br/> Tel. 2133-6200. <br/> Correo Electr&oacute;nico: uaci7@fondolisiados.gob.sv</h2>
 
 										<h2 class='title'>Solicitud de Cotizaci&oacute;n de Precios de Obras Bienes y Servicios</h2>
 										
-										<table border="1" width="700px">
+										<center>
+										<table class="posici" border="1" width="700px">
 										   <tr>
 											<td align="center"><strong>Lugar Y Fecha</strong><br/>
 												<strong><?= $dataReq->date; ?></strong>
@@ -114,7 +115,7 @@
 
 
 											<?
-												$reqPro->idRequest = $_GET['coti'];
+												/*$reqPro->idRequest = $_GET['coti'];
 												$datoP = $reqPro->ctrRequestProviderSearch();
 												if($datoP->idRequest == $_GET['coti'])
 												{
@@ -136,7 +137,7 @@
 											';
 												}
 												echo "</select>";
-												}
+												}*/
 											?>
 										
 													<br/><br/></td>
@@ -146,17 +147,17 @@
 												<td colspan="3" align="center">Atentamente solicito cotizar a nombre de esta institucion, los Bienes y Servicios que acontinuacion se describen: <br/><br/></td>
 											</tr>
 										</table>
-										<table  border="1" width="700px">
+										<table class="posici" border="1" width="700px">
 										<tr>
-											<td width = 30% HEIGHT="40" align="center" ><strong>Cantidad</strong></td>
-											<td colspan="3" HEIGHT="40" align="center"><strong>Descripci&oacute;n</strong></td>
+											<td width = 30% HEIGHT="35" align="center" ><strong>Cantidad</strong></td>
+											<td colspan="3" HEIGHT="35" align="center"><strong>Descripci&oacute;n</strong></td>
 										</tr HEIGHT="">
 										<?
 											while($dataDet = $rowsDet->fetch_object())
 											echo '
 											<tr>
-												<td align="center" HEIGHT="100">' . $dataDet->quantity . '</td>
-												<td colspan="2" align="center" HEIGHT="100">' . $dataDet->description . '</td>
+												<td align="center" HEIGHT="35">' . $dataDet->quantity . '</td>
+												<td colspan="2" align="center" HEIGHT="35">' . $dataDet->description . '</td>
 											</tr>
 											';
 										?>
@@ -190,7 +191,7 @@
 											<table>
 											<tr>
 												<?
-													if($datoP->idRequest == $_GET['coti'] AND $dataReq->cypher == 1 OR $dataReq->cypher == 2 OR  $dataReq->cypher == 3)
+													if($dataReq->cypher == 1 OR $dataReq->cypher == 2 OR  $dataReq->cypher == 3)
 													{
 														
 													}
@@ -212,7 +213,7 @@
 										<td width="730px" align="center">
 
 										<?
-										if($datoP->idRequest == $_GET['coti'] AND $dataReq->cypher == 1 OR $dataReq->cypher == 2 OR  $dataReq->cypher == 3)
+										if($dataReq->cypher == 1 OR $dataReq->cypher == 2 OR  $dataReq->cypher == 3)
 										{
 											$auto->idRequest =   $_GET['coti'];
 											$auto->status = 7;
@@ -233,7 +234,7 @@
 											<input type='text' class='box' name='user7' /><br/><br/>
 											<label for="pass7">Contraseña</label>&nbsp;
 											<input type='password' class='box' name='pass7' /><br/><br/>
-											<input type="submit" name="firma7" value="firmar"> <br/><br/>
+											<input type="submit" name="firma7" value="Firmar"> <br/><br/>
 											</form>
 											<?
 
@@ -254,9 +255,22 @@
 									</td>
 								</tr>
 							</table>
+							</center>
 							<br/>
 							<br/>
 							<?
+								$auto->idRequest =   $_GET['coti'];
+							$auto->status = 7;
+									$resu7 =  $auto->catAuthorizationSearch();
+							if($resu7->status == 7 )
+							{
+							?>
+								<center><a id="ocult" onClick="window.print();" href="#"><img width="80" height="70" src="./img/imp.png"/><a/></center>
+								<center><p id="ocult">Imprimir</p></center>
+								<br/>
+								<br/>
+							<?
+							}
 							echo '<center><a id="ocult" href="./?req=' .$_GET['coti']. '";>Regresar a la Requisici&oacute;n</a></center>';
 							?>
 							<br/>									

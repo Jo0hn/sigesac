@@ -56,7 +56,13 @@ cursor: default;
 					<h3 class='title'>Lista de mis Requisiciones</h3>
 
 					<?
-						if(isset($_GET['del']) && intval($_GET['del'])>0)
+
+				$Req = new catRequests();
+				$Det = new catDetails();
+				$Com = new catComments();
+				$records = $Req->catRequestsShow();
+				
+					if(isset($_GET['del']) && intval($_GET['del'])>0)
 				{
 						
 							echo '<script>document.location.href=./$cat=1;</script>';
@@ -72,18 +78,9 @@ cursor: default;
 							$Com->catCommentsDelete();
 				}
 
-
-				$Req = new catRequests();
-				$Det = new catDetails();
-				$Com = new catComments();
-				$records = $Req->catRequestsShow();
 				
-			
-				
-				
-				
+				$cont=0;
 				$pages->items_total = count($records->fetch_array()) + 1;
-				echo  count($records->fetch_array());
 				$pages->mid_range = 5;
 				$pages->paginate();
 
@@ -101,7 +98,7 @@ cursor: default;
 						<div class='valor'>Eliminar</div>
 						<div class='valor'>Estado</div>
 						</div>";
-					$cont=0;
+
 				while ($row = $records2->fetch_object())
 					{
 						$cont++;
@@ -158,7 +155,6 @@ cursor: default;
 
 					
 					echo "</article>";
-					
 					echo $pages->display_pages();
 			}
 			else

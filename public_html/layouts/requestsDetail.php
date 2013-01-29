@@ -34,7 +34,18 @@
 
 									$auto->catAuthorizationAdd();
 								}
+								else
+								{
+									echo "<script type='text/javascript'>alert('Usuario o Contraseña incorrecta')</script>";
+								echo '<script>document.location.href="./?req='.$_GET['req'].'";</script>'; 
+								}	
 							}
+							else
+							{
+								echo "<script type='text/javascript'>alert('Usuario o Contraseña incorrecta')</script>";
+								echo '<script>document.location.href="./?req='.$_GET['req'].'";</script>'; 
+							}
+
 					 }
 
 
@@ -75,6 +86,7 @@
 							 else
 							{
 								echo "<script type='text/javascript'>alert('Debe Firmar el Solicitante')</script>";
+								echo '<script>document.location.href="./?req='.$_GET['req'].'";</script>'; 
 							}
 					 }
 					
@@ -115,6 +127,7 @@
 							 else
 							 {
 								echo "<script type='text/javascript'>alert('Debe Firmar el Jefe de la Unidad')</script>";
+								echo '<script>document.location.href="./?req='.$_GET['req'].'";</script>'; 
 							 }
 					 }
 					
@@ -155,6 +168,7 @@
 							 else
 							{
 								echo "<script type='text/javascript'>alert('Debe Firmar Disponibilidad Presupuestaria')</script>";
+								echo '<script>document.location.href="./?req='.$_GET['req'].'";</script>'; 
 							}
 					 }
 					
@@ -187,11 +201,12 @@
 
 				?>
 				
-					<article>
+					<article id="information">
 						<div id="breadcrumbs"> <a href="./">Inicio</a> > <a href="./?cat=1">Mis Requisici&oacute;nes</a> > Detalle de Requisicion</div>
 
 						
 						<h3 class='title'>Detalle De La Requisicion   No. <?= $dataReq->idRequest; ?></h3>
+						<br/>
 
 						<table class="tablita" CELLPADDING=0 CELLSPACING=0   style="margin: 0 auto">
 
@@ -203,22 +218,22 @@
 						</table>
 						<table class="tablita" CELLPADDING=0 CELLSPACING=0   style="margin: 0 auto">
 						<tr>
-							<td width = 30% HEIGHT="80" align="center" ><strong>Cantidad</strong></td>
-							<td colspan="3" HEIGHT="80" align="center"><strong>Descripci&oacute;n</strong></td>
+							<td width = 30% HEIGHT="35" align="center" ><strong>Cantidad</strong></td>
+							<td colspan="3" HEIGHT="35" align="center"><strong>Descripci&oacute;n</strong></td>
 						</tr HEIGHT="">
 						<?
 							while($dataDet = $rowsDet->fetch_object())
 							echo '
 							<tr>
-								<td align="center" HEIGHT="80">' . $dataDet->quantity . '</td>
-								<td colspan="2" align="center" HEIGHT="80">' . $dataDet->description . '</td>
+								<td align="center" HEIGHT="35">' . $dataDet->quantity . '</td>
+								<td colspan="2" align="center" HEIGHT="35">' . $dataDet->description . '</td>
 							</tr>
 							';
 						?>
 						</table>
 						<table class="tablita" CELLPADDING=0 CELLSPACING=0   style="margin: 0 auto">
 							<tr>
-							<td width = 100% HEIGHT="40"><strong>Observaciones:</strong> 
+							<td width = 100% HEIGHT="100"><strong>Observaciones:</strong> 
 						<?
 							while($dataCome = $rowsCom->fetch_object())
 							{
@@ -254,7 +269,7 @@
 										<input type='text' class='box' name='user1' /><br/><br/>
 										<label for="pass1">Contraseña</label>&nbsp;
 										<input type='password' class='box' name='pass1' /><br/><br/>
-										<input type="submit" name="firma1" value="firmar"> <br/><br/>
+										<input type="submit" name="firma1" value="Firmar"> <br/><br/>
 									</form>
 									<?
 										}
@@ -284,7 +299,7 @@
 										<input type='text' class='box' name='user2' /><br/><br/>
 										<label for="pass2">Contraseña</label>&nbsp;
 										<input type='password' class='box' name='pass2' /><br/><br/>
-										<input type="submit" name="firma2" value="firmar"></br><br/>
+										<input type="submit" name="firma2" value="Firmar"></br><br/>
 									</form>
 									<?
 										}
@@ -315,7 +330,7 @@
 										<input type='text' class='box' name='user3' /><br/><br/>
 										<label for="pass3">Contraseña</label>&nbsp;
 										<input type='password' class='box' name='pass3' /><br/><br/>
-										<input type="submit" name="firma3" value="firmar"> </br><br/>
+										<input type="submit" name="firma3" value="Firmar"> </br><br/>
 									</form>
 										<?
 										 }
@@ -344,7 +359,7 @@
 									<input type='text' class='box' name='user4' /><br/><br/>
 									<label for="pass4">Contraseña</label>&nbsp;
 									<input type='password' class='box' name='pass4' /><br/><br/>
-									<input type="submit" name="firma4" value="firmar"> </br><br/>
+									<input type="submit" name="firma4" value="Firmar"> </br><br/>
 									<form>
 										<?
 										}
@@ -419,7 +434,18 @@
 						</table>
 						<br/>
 						<br/>
+						<?
 
+									if($resu1->status == 1 && $resu2->status == 2 && $resu3->status == 3 &&  $resu4->status == 4 )
+									{
+						?>
+												<center><a id="ocult" onClick="window.print();" href="#"><img width="80" height="70" src="./img/imp.png"/><a/></center>
+												<center><p id="ocult">Imprimir</p></center>
+									<?
+									}
+									?>
+						<br/>
+						<br/>
 					</article>
 					<?
 
