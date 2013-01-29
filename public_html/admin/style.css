@@ -1,0 +1,356 @@
+#line
+{
+	width:100%;
+	height:30;
+	border:solid #004D80 0.1em;
+	background-color:#004D80;
+	text-align:center;
+}
+
+.info
+{
+	color:white;
+	font-family:Arial, Helvetica;
+	font-size:1.2em;
+}
+
+#table
+{
+	width:30%;
+	margin:0 auto;
+}
+
+#tablet
+{
+	width: 70%;
+	border: 1px solid #00396E;
+}
+
+.tablita
+{
+	font-size: 0.8em;
+	width:90%;
+}
+	
+.tablita td
+{
+	border: 1px solid  #e2e2e2;
+}	
+.tablita tr
+{
+			
+}
+
+
+.box
+{
+	background:#f2f2f2;
+}
+
+.box:focus
+{
+	border:solid skyblue 0.1em;
+}
+
+.style
+{
+	color: #00396E;
+	font-weight: bold;
+}
+
+#nav
+{
+	width:17%;
+	height:100%;
+	border-right:solid black 0.1em;
+	background-color:white;
+	float:left;
+	border-top:solid black 0.1em;
+}
+
+#olNav
+{
+	margin:0;
+	padding:0;
+}
+
+#olNav li
+{
+	width:100%;
+	height:1.5em;
+	background: #f2f2f2;
+	list-style:none;
+	border: solid black 0.1em;
+	text-align:center;
+}
+
+#olNav li:hover
+{
+	background:#004D80;
+}
+
+#olNav a
+{
+	text-decoration: none;
+	color:black;
+}
+
+#olNav a:hover
+{
+	text-decoration: none;
+	color: #fff;
+}
+
+#content
+{
+	width:70%;
+	float:left;
+	padding: 15px;
+}
+
+.camp
+{
+	width: 100%;
+	border: 1px solid #000;
+	display: inline-block;
+	text-align: center;
+}
+
+.camp div
+{
+	display: inline-block;
+	color: #00396E;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+/* Estilo en la Tabla de Administradores y Usuarios */
+
+.camp div.nomb
+{
+	width: 50%;
+}
+
+.camp div.user
+{
+	width: 20%;
+}
+
+.camp div.action
+{
+	width: 12.3%;
+}
+
+/* Estilo de la Tabla Proveedores */
+
+.camp div.cod
+{
+	width: 5%;
+}
+
+.camp div.nom
+{
+	width: 30%;
+}
+
+.camp div.email
+{
+	width: 25%;
+}
+
+.camp div.action2
+{
+	width: 7%;
+}
+
+/* Estilo de Requisiciones */
+
+.camp div.cod2
+{
+	width: 8%;
+}
+
+.camp div.date
+{
+	width: 9%;
+}
+
+.camp div.ident
+{
+	width: 40%;
+}
+
+.valor
+{
+	width: 100%;
+	border: 1px solid #000;
+	display: inline-block;
+	text-align: center;
+}
+
+.valor div
+{
+	display: inline-block;
+	font-size: 0.85em;
+}
+
+/* Estilo en la Tabla de Administradores y Usuarios */
+
+.valor div.user
+{
+	width: 20%;
+}
+
+.valor div.nomb
+{
+	width: 50%;
+}
+
+.valor div.action
+{
+	width: 12.3%;
+}
+
+/* Estilo a la Tabla Proveedores */
+
+.valor div.cod
+{
+	width: 5%;
+}
+
+.valor div.nom
+{
+	width: 30%;
+}
+
+.valor div.email
+{
+	width: 25%;
+}
+
+.valor div.action2
+{
+	width: 7%;
+}
+
+/* Estilo de Requisiciones */
+
+.valor div.cod2
+{
+	width: 8%;
+}
+
+.valor div.date
+{
+	width: 9%;
+}
+
+.valor div.ident
+{
+	width: 40%;
+}
+
+.valor a
+{
+	text-decoration: none;
+	color:black;
+}
+
+#nCamp
+{
+	width: 100%;
+	border: 1px solid #000;
+	display: inline-block;
+	text-align: center;
+}
+
+#nCamp div
+{
+	display: inline-block;
+	font-size: 0.85em;
+}
+
+/* Estilo en la Tabla de Administradores y Usuarios */
+
+#nCamp div.nomb
+{
+	width: 50%;
+}
+
+#nCamp div.user
+{
+	width: 20%;
+}
+
+#nCamp div.action
+{
+	width: 24.6%;
+}
+
+/* Estilo de la Tabla de Proveedores */
+
+#nCamp div.cod
+{
+	width: 5%;
+}
+
+#nCamp div.nom
+{
+	width: 30%;
+}
+
+#nCamp div.email
+{
+	width: 25%;
+}
+
+#nCamp div.action2
+{
+	width: 15%;
+}
+
+/* Estilo de Requisiciones */
+
+#nCamp div.cod2
+{
+	width: 8%;
+}
+
+#nCamp div.date
+{
+	width: 9%;
+}
+
+#nCamp div.ident
+{
+	width: 40%;
+}
+
+#Usuarios
+{
+	margin: 0 auto;
+	width: 90%;
+	border: 1px solid #000;
+}
+
+.prov
+{
+
+	margin: 0 auto;
+	width: 250%;
+	border: 1px solid #000;
+}
+
+#tabla
+{
+	.center();
+	width: 105%;
+}
+
+.title
+{
+	margin-bottom: 25px;
+	color: #00396E;
+	font-size: 1.6em;
+}
+
